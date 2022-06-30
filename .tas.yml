@@ -33,6 +33,7 @@ postMerge:
         pattern: 
           - "./test/services/*.ts"
         framework : jest
+        runPreRunEveryTime: true
         preRun:
           command:
              - apt update
