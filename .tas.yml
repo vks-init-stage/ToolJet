@@ -1,6 +1,17 @@
 ---
 framework: jest
 preRun:
+     env:
+       FORCE_COLOR: true
+       NODE_OPTIONS: "--max-old-space-size=4096"
+       LOCKBOX_MASTER_KEY: lockbox-master-key
+       SECRET_KEY_BASE: secrret-key-base
+       NODE_ENV: test
+       PG_HOST: postgres
+       PG_PORT: 5432
+       PG_USER: postgres
+       PG_PASS: postgres
+       PG_DB: tooljet_test
      command:
         - apt update
         - apt install postgresql -y
