@@ -6,6 +6,7 @@ module.exports = async () => {
     testEnvironment: 'node',
     testRegex: '.spec.ts$',
     testPathIgnorePatterns: ['.e2e-spec.ts$'],
+    globalSetup: "./setup-postgres.js",
     transform: {
       '^.+\\.(t|j)s$': 'ts-jest',
     },
