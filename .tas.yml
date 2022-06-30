@@ -20,6 +20,13 @@ postMerge:
         - apt install postgresql-contrib -y
         - /etc/init.d/postgresql start
         - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
+        - npm i -g npm@7.20.0
+        - npm --prefix plugins ci
+        - npm --prefix plugins run create:client && npm --prefix plugins run create:server
+        - npm --prefix plugins run build:packages && npm --prefix plugins run build:server
+        - npm --prefix server ci
+        - npm --prefix server run db:create
+        - npm --prefix server run db:migrate
   subModules:
       - name: server      
         path : "./server"
@@ -28,13 +35,7 @@ postMerge:
         framework : jest
         preRun:
           command:
-             - npm i -g npm@7.20.0
-             - npm --prefix plugins ci
-             - npm --prefix plugins run create:client && npm --prefix plugins run create:server
-             - npm --prefix plugins run build:packages && npm --prefix plugins run build:server
-             - npm --prefix server ci
-             - npm --prefix server run db:create
-             - npm --prefix server run db:migrate
+             - npm ci
         configFile : "./jest.config.ts"
 # ---
 # framework: jest
