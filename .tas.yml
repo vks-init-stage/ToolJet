@@ -1,0 +1,25 @@
+---
+framework: jest
+preRun:
+     command:
+        - apt install wget ca-certificates
+        - wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+        - sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+        - apt update
+        - apt install postgresql postgresql-contrib
+        - npm i -g npm@7.20.0
+        - npm --prefix plugins ci
+        - npm --prefix plugins run create:client && npm --prefix plugins run create:server
+        - npm --prefix plugins run build:packages && npm --prefix plugins run build:server
+        - npm --prefix server ci
+        - npm --prefix server run db:create
+        - npm --prefix server run db:migrate
+postMerge:
+  env:
+      NODE_ENV: test
+  pattern: 
+    - "test/services/users.service.spec.ts"
+postRun:
+     command:
+        - node --version
+version: 1.0.0
