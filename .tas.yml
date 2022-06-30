@@ -2,11 +2,9 @@
 framework: jest
 preRun:
      command:
-        - apt install wget ca-certificates
-        - wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
-        - sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
         - apt update
-        - apt install postgresql postgresql-contrib
+        - apt install postgresql
+        - apt install postgresql-contrib
         - npm i -g npm@7.20.0
         - npm --prefix plugins ci
         - npm --prefix plugins run create:client && npm --prefix plugins run create:server
