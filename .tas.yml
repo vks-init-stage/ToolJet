@@ -56,4 +56,3 @@ postMerge:
              - npm run db:migrate
              - npm install jest-cli
         configFile : "./jest.config.ts"
-
