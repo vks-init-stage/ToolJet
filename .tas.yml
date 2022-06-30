@@ -5,7 +5,7 @@ preRun:
         - apt update
         - apt install postgresql -y
         - apt install postgresql-contrib -y
-        - postgres psql
+        - postgres psql -c "SELECT version();"
         - npm i -g npm@7.20.0
         - npm --prefix plugins ci
         - npm --prefix plugins run create:client && npm --prefix plugins run create:server
