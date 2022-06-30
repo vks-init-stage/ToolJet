@@ -18,13 +18,14 @@ preRun:
         - apt install postgresql -y
         - apt install postgresql-contrib -y
         - /etc/init.d/postgresql start
+        - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
         - npm i -g npm@7.20.0
         - npm --prefix plugins ci
         - npm --prefix plugins run create:client && npm --prefix plugins run create:server
         - npm --prefix plugins run build:packages && npm --prefix plugins run build:server
         - npm --prefix server ci
-        - su - postgres -c 'npm --prefix server run db:create'
-        - su - postgres -c 'npm --prefix server run db:migrate'
+        - npm --prefix server run db:create
+        - npm --prefix server run db:migrate
 postMerge:
   env:
       NODE_ENV: test
