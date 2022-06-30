@@ -31,7 +31,7 @@ postMerge:
   env:
       NODE_ENV: test
   pattern: 
-    - "./server/test/controllers/*.ts"
+    - "./server/test/controllers/app.e2e-spec.ts"
 postRun:
      command:
         - node --version
