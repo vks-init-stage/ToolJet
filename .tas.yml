@@ -54,6 +54,6 @@ postMerge:
              - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
              - npm ci
              - npm run db:create
-             - npm run db:migrat
+             - npm run db:migrate
              - npm install jest-cli
         configFile : "./jest.config.ts"
