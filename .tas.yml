@@ -37,4 +37,5 @@ postMerge:
         preRun:
           command:
              - npm ci
+             - npm install jest-cli
         configFile : "./jest.config.ts"
