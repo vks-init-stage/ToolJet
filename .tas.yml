@@ -6,7 +6,6 @@ preRun:
        NODE_OPTIONS: "--max-old-space-size=4096"
        LOCKBOX_MASTER_KEY: lockbox-master-key
        SECRET_KEY_BASE: secrret-key-base
-       NODE_ENV: test
        PG_HOST: localhost
        PG_PORT: 5432
        PG_USER: postgres
