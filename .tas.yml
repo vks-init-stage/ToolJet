@@ -25,8 +25,8 @@ postMerge:
         - npm --prefix plugins run create:client && npm --prefix plugins run create:server
         - npm --prefix plugins run build:packages && npm --prefix plugins run build:server
         - npm --prefix server ci
-        - npm --prefix server run db:create
-        - npm --prefix server run db:migrate
+#         - npm --prefix server run db:create
+#         - npm --prefix server run db:migrate
   subModules:
       - name: server      
         path : "./server"
