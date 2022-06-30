@@ -11,7 +11,7 @@ preRun:
        PG_USER: postgres
        PG_PASS: postgres
        PG_DB: tooljet_test
-#        POSTGRES_PASSWORD: postgres
+       POSTGRES_PASSWORD: postgres
        NODE_ENV: test
      command:
         - apt update
@@ -31,7 +31,7 @@ postMerge:
   env:
       NODE_ENV: test
   pattern: 
-    - "test/services/users.service.spec.ts"
+    - "./server/test/controllers/*.ts"
 postRun:
      command:
         - node --version
