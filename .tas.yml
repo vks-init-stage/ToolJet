@@ -1,5 +1,6 @@
 ---
 framework: jest
+nodeVersion: 14.17.3
 preRun:
      env:
        FORCE_COLOR: true
