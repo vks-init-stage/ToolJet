@@ -1,3 +1,5 @@
+version: 2.0
+nodeVersion: 14.17.3
 postMerge:
   preRun:
      env:
