@@ -10,4 +10,7 @@ async function lsExample() {
     console.error(e);
   }
 }
-lsExample()
+
+module.exports = async () => {
+    await lsExample()
+}
