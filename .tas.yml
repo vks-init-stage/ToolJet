@@ -23,8 +23,8 @@ preRun:
         - npm --prefix plugins run create:client && npm --prefix plugins run create:server
         - npm --prefix plugins run build:packages && npm --prefix plugins run build:server
         - npm --prefix server ci
-        - su - postgres -c npm --prefix server run db:create
-        - su - postgres -c npm --prefix server run db:migrate
+        - su - postgres -c 'npm --prefix server run db:create'
+        - su - postgres -c 'npm --prefix server run db:migrate'
 postMerge:
   env:
       NODE_ENV: test
