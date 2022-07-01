@@ -24,10 +24,10 @@ postMerge:
         # - /etc/init.d/postgresql start
         # - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
         - npm i -g npm@7.20.0
-        - npm --prefix plugins ci
+        - npm --prefix plugins install
         - npm --prefix plugins run create:client && npm --prefix plugins run create:server
         - npm --prefix plugins run build:packages && npm --prefix plugins run build:server
-        - npm --prefix server ci
+        - npm --prefix server install
         # - npm --prefix server run db:create
         # - npm --prefix server run db:migrate
   subModules:
@@ -56,11 +56,10 @@ postMerge:
             - /etc/init.d/postgresql start
             - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
             - npm i -g npm@7.20.0
-            - npm ci
+            - npm install
             - npm install jest-cli
             - npm run db:create
             - npm run db:migrate
-            - unset SMART_BINARY
             # - rm -rf /usr/local/bin/bundle
             # - npm install yjs
             # - npm install -g yjs
