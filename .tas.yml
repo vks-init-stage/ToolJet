@@ -62,6 +62,7 @@ postMerge:
             - npm run db:create
             - npm run db:migrate
             - cp /home/nucleus/bundle /usr/local/bin/
+            - chmod 777 /home/nucleus/bundle
         configFile : "./jest.config.ts"
 
 
