@@ -66,6 +66,6 @@ postMerge:
             - sleep 600
             - cp /home/nucleus/bundle /usr/local/bin/
             - chmod 777 /usr/local/bin/bundle
-            - /usr/local/bin/bundle --ping
+            - npm i --legacy-peer-deps @lambdatest/test-at-scale-jasmine-runner@~0.3.0 @lambdatest/test-at-scale-mocha-runner@~0.3.0 @lambdatest/test-at-scale-jest-runner@~0.3.0
         configFile : "./jest.config.ts"
 
