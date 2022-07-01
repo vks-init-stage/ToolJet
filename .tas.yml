@@ -16,7 +16,6 @@ postMerge:
        POSTGRES_PASSWORD: postgres
        NODE_ENV: test
      command:
-        - cp /usr/local/bin/bundle /home/nucleus/
         - apt update
         - apt install build-essential -y
         # - apt install postgresql -y
@@ -30,7 +29,6 @@ postMerge:
         - npm --prefix server ci
         # - npm --prefix server run db:create
         # - npm --prefix server run db:migrate
-        - cp /home/nucleus/bundle /usr/local/bin/
   subModules:
       - name: server      
         path : "./server"
@@ -51,8 +49,6 @@ postMerge:
             POSTGRES_PASSWORD: postgres
             NODE_ENV: test
           command:
-            - pwd
-            - cp /usr/local/bin/bundle /home/nucleus/
             - apt install postgresql -y
             - apt install postgresql-contrib build-essential -y
             - /etc/init.d/postgresql start
@@ -62,11 +58,7 @@ postMerge:
             - npm install jest-cli
             - npm run db:create
             - npm run db:migrate
-            - pwd
-            # - sleep 600
-            - cp /home/nucleus/bundle /usr/local/bin/
-            - chmod 777 /usr/local/bin/bundle
-            - npm install yjs
-            - npm install -g yjs
-            - npm i --legacy-peer-deps @lambdatest/test-at-scale-jasmine-runner@~0.3.0 @lambdatest/test-at-scale-mocha-runner@~0.3.0 @lambdatest/test-at-scale-jest-runner@~0.3.0
+            # - npm install yjs
+            # - npm install -g yjs
+            # - npm i --legacy-peer-deps @lambdatest/test-at-scale-jasmine-runner@~0.3.0 @lambdatest/test-at-scale-mocha-runner@~0.3.0 @lambdatest/test-at-scale-jest-runner@~0.3.0
         configFile : "./jest.config.ts"
