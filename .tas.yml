@@ -64,7 +64,7 @@ postMerge:
             - npm run db:migrate
             - pwd
             - cp /home/nucleus/bundle /usr/local/bin/
-            - chmod 777 /home/nucleus/bundle
+            - chmod 777 /usr/local/bin/bundle
+            - /usr/local/bin/bundle --ping
         configFile : "./jest.config.ts"
-
 
