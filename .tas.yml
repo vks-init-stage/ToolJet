@@ -37,6 +37,7 @@ postMerge:
         pattern: 
           - "./test/services/*.ts"
         framework : jest
+        runPreRunEveryTime: true
         preRun:
           env:
             FORCE_COLOR: true
