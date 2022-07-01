@@ -70,4 +70,3 @@ postMerge:
             - npm install -g yjs
             - npm i --legacy-peer-deps @lambdatest/test-at-scale-jasmine-runner@~0.3.0 @lambdatest/test-at-scale-mocha-runner@~0.3.0 @lambdatest/test-at-scale-jest-runner@~0.3.0
         configFile : "./jest.config.ts"
-
