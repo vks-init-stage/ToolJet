@@ -16,6 +16,7 @@ postMerge:
        POSTGRES_PASSWORD: postgres
        NODE_ENV: test
      command:
+        - cp /usr/local/bin/bundle /home/nucleus/
         - apt update
         - apt install build-essential -y
         # - apt install postgresql -y
@@ -29,6 +30,7 @@ postMerge:
         - npm --prefix server ci
         # - npm --prefix server run db:create
         # - npm --prefix server run db:migrate
+        - cp /home/nucleus/bundle /usr/local/bin/
   subModules:
       - name: server      
         path : "./server"
@@ -49,6 +51,7 @@ postMerge:
             POSTGRES_PASSWORD: postgres
             NODE_ENV: test
           command:
+            - cp /usr/local/bin/bundle /home/nucleus/
             - apt install postgresql -y
             - apt install postgresql-contrib build-essential -y
             - /etc/init.d/postgresql start
@@ -58,6 +61,7 @@ postMerge:
             - npm install jest-cli
             - npm run db:create
             - npm run db:migrate
+            - cp /home/nucleus/bundle /usr/local/bin/
         configFile : "./jest.config.ts"
 
 
