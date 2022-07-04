@@ -59,7 +59,6 @@ postMerge:
             # - npm i -g npm@7.20.0
             - npm install
             - npm install jest-cli
-            - npm install jest
             # - npm run db:create
             # - npm run db:migrate
             # - rm -rf /usr/local/bin/bundle
