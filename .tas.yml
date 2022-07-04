@@ -52,17 +52,18 @@ postMerge:
             POSTGRES_PASSWORD: postgres
             NODE_ENV: test
           command:
-            - apt install postgresql -y
-            - apt install postgresql-contrib build-essential -y
-            - /etc/init.d/postgresql start
-            - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
+            # - apt install postgresql -y
+            # - apt install postgresql-contrib build-essential -y
+            # - /etc/init.d/postgresql start
+            # - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
             - npm i -g npm@7.20.0
             - npm install
             - npm install jest-cli
-            - npm run db:create
-            - npm run db:migrate
+            # - npm run db:create
+            # - npm run db:migrate
             # - rm -rf /usr/local/bin/bundle
             # - npm install yjs
             # - npm install -g yjs
             # - npm i --legacy-peer-deps @lambdatest/test-at-scale-jasmine-runner@~0.3.0 @lambdatest/test-at-scale-mocha-runner@~0.3.0 @lambdatest/test-at-scale-jest-runner@~0.3.0
         configFile : "./jest.config.ts"
+

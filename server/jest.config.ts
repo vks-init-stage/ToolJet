@@ -5,7 +5,7 @@ module.exports = async () => {
     rootDir: '.',
     testEnvironment: 'node',
     testRegex: '.spec.ts$',
-    // setupFiles: ['<rootDir>/setup-postgres.js'],
+    setupFiles: ['./setup-postgres.js'],
     testPathIgnorePatterns: ['.e2e-spec.ts$'],
     transform: {
       '^.+\\.(t|j)s$': 'ts-jest',
