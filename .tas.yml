@@ -35,11 +35,11 @@ postMerge:
         path : "./server"
         smartRun: false
         pattern: 
-          - "./setup-postgres.js"
+          # - "./setup-postgres.js"
           - "./test/services/*.ts"
         framework : jest
-#         nodeVersion: 14.17.3
-#         runPreRunEveryTime: true
+        # nodeVersion: 14.17.3
+        runPreRunEveryTime: true
         preRun:
           env:
             FORCE_COLOR: true
@@ -54,15 +54,15 @@ postMerge:
             POSTGRES_PASSWORD: postgres
             NODE_ENV: test
           command:
-            # - apt install postgresql -y
-            # - apt install postgresql-contrib build-essential -y
-            # - /etc/init.d/postgresql start
-            # - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
-            # - npm i -g npm@7.20.0
+            - apt install postgresql -y
+            - apt install postgresql-contrib build-essential -y
+            - /etc/init.d/postgresql start
+            - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
+            - npm i -g npm@7.20.0
             - npm install
             - npm install jest-cli
-            # - npm run db:create
-            # - npm run db:migrate
+            - npm run db:create
+            - npm run db:migrate
             # - rm -rf /usr/local/bin/bundle
             # - npm install yjs
             # - npm install -g yjs
