@@ -37,6 +37,7 @@ postMerge:
         pattern: 
           - "./test/services/*.ts"
         framework : jest
+        nodeVersion: 14.17.3
         runPreRunEveryTime: true
         preRun:
           env:
