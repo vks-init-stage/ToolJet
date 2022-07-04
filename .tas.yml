@@ -35,6 +35,7 @@ postMerge:
         path : "./server"
         smartRun: false
         pattern: 
+          - "./setup-postgres.js"
           - "./test/services/*.ts"
         framework : jest
 #         nodeVersion: 14.17.3
