@@ -23,7 +23,7 @@ postMerge:
         # - apt install postgresql-contrib -y
         # - /etc/init.d/postgresql start
         # - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
-        - npm i -g npm@7.20.0
+        # - npm i -g npm@7.20.0
         - npm --prefix plugins install
         - npm --prefix plugins run create:client && npm --prefix plugins run create:server
         - npm --prefix plugins run build:packages && npm --prefix plugins run build:server
@@ -56,7 +56,7 @@ postMerge:
             # - apt install postgresql-contrib build-essential -y
             # - /etc/init.d/postgresql start
             # - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
-            - npm i -g npm@7.20.0
+            # - npm i -g npm@7.20.0
             - npm install
             - npm install jest-cli
             - npm install jest
@@ -65,6 +65,6 @@ postMerge:
             # - rm -rf /usr/local/bin/bundle
             # - npm install yjs
             # - npm install -g yjs
-            - npm i --legacy-peer-deps @lambdatest/test-at-scale-jasmine-runner@~0.3.0 @lambdatest/test-at-scale-mocha-runner@~0.3.0 @lambdatest/test-at-scale-jest-runner@~0.3.0
+            # - npm i --legacy-peer-deps @lambdatest/test-at-scale-jasmine-runner@~0.3.0 @lambdatest/test-at-scale-mocha-runner@~0.3.0 @lambdatest/test-at-scale-jest-runner@~0.3.0
         configFile : "./jest.config.ts"
 
