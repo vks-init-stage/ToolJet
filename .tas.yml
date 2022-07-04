@@ -23,7 +23,7 @@ postMerge:
         # - apt install postgresql-contrib -y
         # - /etc/init.d/postgresql start
         # - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
-        # - npm i -g npm@7.20.0
+        - npm i -g npm@7.20.0
         - npm --prefix plugins install
         - npm --prefix plugins run create:client && npm --prefix plugins run create:server
         - npm --prefix plugins run build:packages && npm --prefix plugins run build:server
@@ -56,7 +56,7 @@ postMerge:
             # - apt install postgresql-contrib build-essential -y
             # - /etc/init.d/postgresql start
             # - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
-            # - npm i -g npm@7.20.0
+            - npm i -g npm@7.20.0
             - npm install
             - npm install jest-cli
             # - npm run db:create
