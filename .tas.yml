@@ -19,17 +19,12 @@ postMerge:
      command:
         - apt update
         - apt install build-essential -y
-        # - apt install postgresql -y
-        # - apt install postgresql-contrib -y
-        # - /etc/init.d/postgresql start
-        # - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
         - npm i -g npm@7.20.0
         - npm --prefix plugins install
         - npm --prefix plugins run create:client && npm --prefix plugins run create:server
         - npm --prefix plugins run build:packages && npm --prefix plugins run build:server
         - npm --prefix server install
-        # - npm --prefix server run db:create
-        # - npm --prefix server run db:migrate
+
   subModules:
       - name: server      
         path : "./server"
@@ -38,7 +33,6 @@ postMerge:
           # - "./setup-postgres.js"
           - "./test/services/*.ts"
         framework : jest
-        # nodeVersion: 14.17.3
         runPreRunEveryTime: true
         preRun:
           env:
@@ -60,11 +54,7 @@ postMerge:
             - su -c "psql -c \"ALTER USER postgres PASSWORD 'postgres';\"" postgres
             - npm i -g npm@7.20.0
             - npm install
-            - npm install jest-cli
-            - npm run db:create
+             - npm run db:create
             - npm run db:migrate
-            # - rm -rf /usr/local/bin/bundle
-            # - npm install yjs
-            # - npm install -g yjs
-            # - npm i --legacy-peer-deps @lambdatest/test-at-scale-jasmine-runner@~0.3.0 @lambdatest/test-at-scale-mocha-runner@~0.3.0 @lambdatest/test-at-scale-jest-runner@~0.3.0
+           
         configFile : "./jest.config.ts"
